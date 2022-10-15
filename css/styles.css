@@ -1,0 +1,62 @@
+.login-img {
+  background-image: url("../img/login.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+main.container {
+  min-height: calc(100vh - 8rem);
+  
+}
+.login-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.warning {
+  color: #bb2124;
+}
+
+.success {
+  color: #22bb33;
+}
+
+
+/* SWITCHER DARK/LIGHT THEME */
+
+.switcher {
+  position: fixed;
+  right: var(--spacing);
+  bottom: var(--spacing);
+  width: auto;
+  margin-bottom: 0;
+  padding: 0.75rem;
+  border-radius: 2rem;
+  box-shadow: var(--card-box-shadow);
+  line-height: 1;
+  text-align: right;
+
+}
+
+.switcher::after {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.15rem solid currentColor;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    currentColor 0,
+    currentColor 50%,
+    transparent 50%
+  );
+  content: "";
+  vertical-align: bottom;
+}
+
+.botones{
+  position: center;
+  size: cover;
+}
