@@ -1,9 +1,13 @@
 <?php
-session_start();
-if (isset($_SESSION["username"])) {
-    $username = $_SESSION["username"];
-    
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
+
+if (isset($_SESSION["user"])) {
+    $username = $_SESSION["user"]["username"];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -17,19 +21,32 @@ if (isset($_SESSION["username"])) {
     <link rel="stylesheet" href="../css/pico.min.css">
     <!-- CUSTOM STYLES -->
     <link rel="stylesheet" href="../css/styles.css">
+     <!-- VANILLA DATATABLES -->
+     <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
+     <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/a0f449ffa7.js" crossorigin="anonymous"></script>
+     <!-- SWITCHER -->
     <script src="../js/themeSwitcher.js" defer></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Amaclon</title>
 </head>
 <body>
     <nav class="container-fluid">
         <ul>
             <li>
-                <strong style="font-size: 24px;">🛍️ Amaclon</strong>
+                <strong style="font-size: 24px;">
+                    <a href="../home/">🛍️ Amaclon</a>
+                </strong>
             </li>
         </ul>
         <ul>
-            <?php if ($username): ?>
+            <?php if (isset($username)): ?>
+            <li>
+                <strong>
+                    <a href="../products/">My products</a>
+                </strong>
+            </li>
+            Logged as:
             <li>
                 <details role="list" dir="rtl">
                     <summary aria-haspopup="listbox" role="link"><b><?php echo $username ?></b></summary>
@@ -46,7 +63,7 @@ if (isset($_SESSION["username"])) {
             </li>
             <li>
                 <b>
-                    <a href="#">Register</a>
+                    <a href="../register/">Register</a>
                 </b>    
             </li>
             <?php endif; ?>

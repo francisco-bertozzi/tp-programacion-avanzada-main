@@ -6,14 +6,13 @@
 
 main.container {
   min-height: calc(100vh - 8rem);
-  
 }
+
 .login-main {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 
 .warning {
   color: #bb2124;
@@ -22,7 +21,6 @@ main.container {
 .success {
   color: #22bb33;
 }
-
 
 /* SWITCHER DARK/LIGHT THEME */
 
@@ -37,7 +35,6 @@ main.container {
   box-shadow: var(--card-box-shadow);
   line-height: 1;
   text-align: right;
-
 }
 
 .switcher::after {
@@ -54,9 +51,4 @@ main.container {
   );
   content: "";
   vertical-align: bottom;
-}
-
-.botones{
-  position: center;
-  size: cover;
 }
